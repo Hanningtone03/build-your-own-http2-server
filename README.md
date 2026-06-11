@@ -1,6 +1,6 @@
 # Build Your Own HTTP/2 Server
 
-An HTTP/2 server built from scratch in Node.js; implements the full HTTP/2 framing layer, HPACK header compression, stream multiplexing and TLS negotiation.
+An HTTP/2 server built in Node.js; implements the full HTTP/2 framing layer, HPACK header compression, stream multiplexing and TLS negotiation.
 
 ## How it works
 
