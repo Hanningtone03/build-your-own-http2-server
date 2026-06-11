@@ -13,7 +13,7 @@ HTTP/2 is a binary protocol that runs over TLS. Unlike HTTP/1.1 which sends plai
 - Compresses and decompresses headers using HPACK with the static table
 - Routes requests and sends framed responses
 
-Built on top of the concepts from [build-your-own-http-server](https://github.com/Hanningtone03/build-your-own-http-server) — start there to understand the HTTP/1.1 foundation.
+Built on top of the concepts from [build-your-own-http-server](https://github.com/Hanningtone03/build-your-own-http-server); start there to understand the HTTP/1.1 foundation.
 
 ## Project structure
 
