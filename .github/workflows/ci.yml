@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Syntax check
+        run: node --check src/server.js src/frame.js src/hpack.js src/stream.js src/router.js
+      - name: Start server and test connection
+        run: |
+          node src/server.js &
+          sleep 2
+          node -e "const tls=require('tls');const s=tls.connect(8443,'localhost',{rejectUnauthorized:false,ALPNProtocols:['h2']},()=>{console.log('Connected:',s.alpnProtocol);s.destroy()});s.on('error',e=>console.log('Error:',e.message))"
